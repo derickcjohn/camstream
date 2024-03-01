@@ -22,6 +22,11 @@
   source myenv/bin/activate
   ```
 ### Your terminal prompt will change to indicate that the virtual environment is active.
+### 4. Deactivate Virtual Environment (when finished):
+```
+deactivate
+```
+This will deactivate the virtual environment and return you to your system-wide Python installation.
   
 ## Live
 This application offers a user-friendly interface for visualizing daily and weekly object detection data sourced from an Excel spreadsheet. Users can choose a specific date to explore corresponding daily detection counts for each hour and weekly detection counts for the selected week.
