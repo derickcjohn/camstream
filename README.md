@@ -91,3 +91,8 @@
 ### Ensure the system is always online and the Streamlit app is running. Only then will the app be available to others on the internet.
 
 ## Git LFS for uploading of large files
+### 1. Install Git LFS:
+- Run the command:
+  ```
+  git lfs install
+  ```
