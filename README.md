@@ -88,4 +88,6 @@
 ![image](https://github.com/derickcjohn/camstream/assets/96041141/488030f0-1c7c-440c-ab61-bfea49a264f5)
 - Click on `Visit Site`.
 - The website is now available over the internet.
-### Ensure that the system is always online and the Streamlit app is running. Only then will the app be available to others on the internet.
+### Ensure the system is always online and the Streamlit app is running. Only then will the app be available to others on the internet.
+
+## Git LFS for uploading of large files
