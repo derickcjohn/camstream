@@ -3,7 +3,7 @@
 ## Install Python and Set Up Virtual Environment
 ### Before running this application, install Python and set up a virtual environment.
 ### 1. Install Python:
-- hello
+- Visit the official [Python website](https://www.python.org/downloads/) and download the latest version for your operating system.
 ## Live
 This application offers a user-friendly interface for visualizing daily and weekly object detection data sourced from an Excel spreadsheet. Users can choose a specific date to explore corresponding daily detection counts for each hour and weekly detection counts for the selected week.
 
