@@ -82,6 +82,9 @@
   ngrok http http://192.168.1.70:8501
   ```
 - Press `Enter`.
+- Copy the Forwarding URL `https://d4af-117-216-91-155.ngrok-free.app` and paste it into the browser.
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/e06881c9-950d-43d7-ab69-8d0a8a1796ab)
+
 
 ### 8. Deactivate Virtual Environment (when finished):
 ```
