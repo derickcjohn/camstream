@@ -96,3 +96,9 @@
   ```
   git lfs install
   ```
+### 2. Tracking down the large file:
+- Track down with the extension of the large file.
+```
+git lfs track "*.xlsx"
+```
+- You will get a `.gitattributes` file.
