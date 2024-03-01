@@ -8,7 +8,10 @@
 ### 2. Set Up Virtual Environment
 - Open a terminal or command prompt.
 - Navigate to the directory where you want to create your virtual environment.
-- Use the following command to create a virtual environment named `myenv`:
+- Use the following command to create a virtual environment named `myenv` or anything you choose:
+  ```
+  python -m venv myenv
+  ```
 ## Live
 This application offers a user-friendly interface for visualizing daily and weekly object detection data sourced from an Excel spreadsheet. Users can choose a specific date to explore corresponding daily detection counts for each hour and weekly detection counts for the selected week.
 
