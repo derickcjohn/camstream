@@ -21,7 +21,7 @@
   ```
   source myenv/bin/activate
   ```
-### Your terminal prompt will change to indicate that the virtual environment is active.
+#### Your terminal prompt will change to indicate that the virtual environment is active.
 ### 4. Deactivate Virtual Environment (when finished):
 ```
 deactivate
