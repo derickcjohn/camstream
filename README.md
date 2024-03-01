@@ -84,9 +84,12 @@
 - Press `Enter`.
 - Copy the Forwarding URL `https://d4af-117-216-91-155.ngrok-free.app` and paste it into the browser.
   ![image](https://github.com/derickcjohn/camstream/assets/96041141/e06881c9-950d-43d7-ab69-8d0a8a1796ab)
+- The website is now available over the internet.
+- You would encounter a page like this:
+![image](https://github.com/derickcjohn/camstream/assets/96041141/488030f0-1c7c-440c-ab61-bfea49a264f5)
+- Click on `Visit Site`.
 
-
-### 8. Deactivate Virtual Environment (when finished):
+### 12. Deactivate Virtual Environment (when finished):
 ```
 deactivate
 ```
