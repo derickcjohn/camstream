@@ -44,8 +44,16 @@
 ![image](https://github.com/derickcjohn/camstream/assets/96041141/85b4eb26-c04b-4c61-a186-0708ac959d7e)
 - To make this app available online for others to access, you need to use ngrok.
 ### 8. Downloading ngrok:
-- Download the ngrok ZIP file from [here](https://ngrok.com/download).
+- Go to the [ngrok](https://ngrok.com/download) website.
+- Select the 'Windows' version and download the ZIP file. 
 - Extract the downloaded ZIP file to C drive.
+- Also, signup in ngrok, to get the `authtoken`, which will be required in the upcoming steps.
+### 9. Setting up Environment variables:
+- Type `env` in the windows search bar and select `Edit the system environment variables` option.
+![image](https://github.com/derickcjohn/camstream/assets/96041141/166d81c4-4b57-46fb-a9d3-2ef36cda2743)
+- Click on `Environment variables..` option in the System properties dialogue box.
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/366924ca-ea09-4b6c-845d-629221aedf3d)
+
 
 ### 8. Deactivate Virtual Environment (when finished):
 ```
