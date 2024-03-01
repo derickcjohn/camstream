@@ -40,7 +40,8 @@
   ```
   streamlit run Live.py
   ```
-  ![2023_10_31_17_10_04_532758keyframe_0001_jpg rf 176eed676c0c1a7f04877bc63af97851](https://github.com/derickcjohn/camstream/assets/96041141/a072bb37-7578-4db8-a7bd-368a20256cc4)
+- You would see like this below and the streamlit app will be running in your browser.
+![image](https://github.com/derickcjohn/camstream/assets/96041141/85b4eb26-c04b-4c61-a186-0708ac959d7e)
 
 ### 8. Deactivate Virtual Environment (when finished):
 ```
