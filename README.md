@@ -13,13 +13,14 @@
   python -m venv myenv
   ```
 ### 3. Activate Virtual Environment:
-```
-### Windows
-myenv\Scripts\activate
-
-### macOS/Linux
-source myenv/bin/activate
-```
+- In Windows OS:
+  ```
+  myenv\Scripts\activate
+  ```
+- In macOS/Linux OS:
+  ```
+  source myenv/bin/activate
+  ```
 ### Your terminal prompt will change to indicate that the virtual environment is active.
   
 ## Live
