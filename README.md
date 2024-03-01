@@ -53,7 +53,15 @@
 ![image](https://github.com/derickcjohn/camstream/assets/96041141/166d81c4-4b57-46fb-a9d3-2ef36cda2743)
 - Click on `Environment variables..` option in the System properties dialogue box.
   ![image](https://github.com/derickcjohn/camstream/assets/96041141/366924ca-ea09-4b6c-845d-629221aedf3d)
-
+- Select `Path` within `System variables` and then click `Edit`.
+![image](https://github.com/derickcjohn/camstream/assets/96041141/54e9997b-c402-4c32-ad40-386e17481ecb)
+- Go to the extracted ngrok directory and copy the path to the directory, it would be something like this:
+  ```
+  C:\ngrok
+  ```
+- In the `Edit environment variable` dialogue box, click on `New` and paste the path to the ngrok directory.
+![image](https://github.com/derickcjohn/camstream/assets/96041141/dbce7384-9cf3-4024-9428-89dd6d28a1cf)
+- Then click `OK` on all three tabs.
 
 ### 8. Deactivate Virtual Environment (when finished):
 ```
