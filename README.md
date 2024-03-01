@@ -30,7 +30,19 @@
   source myenv/bin/activate
   ```
 #### Your terminal prompt will change to indicate that the virtual environment is active.
-### 6. Deactivate Virtual Environment (when finished):
+### 6. Install Dependencies:
+- Run the following command to install dependencies from the `requirements.txt` file:
+  ```
+  pip install -r requirements.txt
+  ```
+### 7. Running the Streamlit app:
+- After the dependencies are installed, type the below command in the terminal to run the streamlit app:
+  ```
+  streamlit run Live.py
+  ```
+  ![2023_10_31_17_10_04_532758keyframe_0001_jpg rf 176eed676c0c1a7f04877bc63af97851](https://github.com/derickcjohn/camstream/assets/96041141/a072bb37-7578-4db8-a7bd-368a20256cc4)
+
+### 8. Deactivate Virtual Environment (when finished):
 ```
 deactivate
 ```
