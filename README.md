@@ -25,10 +25,6 @@
   ```
   myenv\Scripts\activate
   ```
-- In macOS/Linux OS:
-  ```
-  source myenv/bin/activate
-  ```
 #### Your terminal prompt will change to indicate that the virtual environment is active.
 ### 6. Install Dependencies:
 - Run the following command to install dependencies from the `requirements.txt` file:
@@ -75,7 +71,17 @@
   ```
 - Then press enter. Your auth token will be added to the configuration file.
 ### 11. Getting the website online:
-
+- In the command prompt, type:
+  ```
+  ngrok http <Netwrok URL>
+  ```
+- Where `Network URL` is the URL that was given when the Streamlit app was running:
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/85b4eb26-c04b-4c61-a186-0708ac959d7e)
+- For this example, the line would be:
+  ```
+  ngrok http http://192.168.1.70:8501
+  ```
+- Press `Enter`.
 
 ### 8. Deactivate Virtual Environment (when finished):
 ```
