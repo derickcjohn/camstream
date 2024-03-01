@@ -102,3 +102,16 @@
 git lfs track "*.xlsx"
 ```
 - You will get a `.gitattributes` file.
+- Committing to the main branch.
+```
+git lfs push --all origin main
+```
+- Pushing all the files to github repo.
+```
+git add .
+```
+- Commit with a commit message.
+```
+git commit -m "commit message"
+git push -u origin main
+```
