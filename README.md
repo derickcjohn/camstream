@@ -36,12 +36,16 @@
   pip install -r requirements.txt
   ```
 ### 7. Running the Streamlit app:
-- After the dependencies are installed, type the below command in the terminal to run the streamlit app:
+- After the dependencies are installed, type the below command in the terminal to run the Streamlit app:
   ```
   streamlit run Live.py
   ```
-- You would see like this below and the streamlit app will be running in your browser.
+- You will see this below, and the Streamlit app will run in your browser.
 ![image](https://github.com/derickcjohn/camstream/assets/96041141/85b4eb26-c04b-4c61-a186-0708ac959d7e)
+- To make this app available online for others to access, you need to use ngrok.
+### 8. Downloading ngrok:
+- Download the ngrok ZIP file from [here](https://ngrok.com/download).
+- Extract the downloaded ZIP file to C drive.
 
 ### 8. Deactivate Virtual Environment (when finished):
 ```
