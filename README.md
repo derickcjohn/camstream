@@ -49,19 +49,33 @@
 - Extract the downloaded ZIP file to C drive.
 - Also, signup in ngrok, to get the `authtoken`, which will be required in the upcoming steps.
 ### 9. Setting up Environment variables:
-- Type `env` in the windows search bar and select `Edit the system environment variables` option.
+- Type `env` in the Windows search bar and select the `Edit the system environment variables` option.
 ![image](https://github.com/derickcjohn/camstream/assets/96041141/166d81c4-4b57-46fb-a9d3-2ef36cda2743)
-- Click on `Environment variables..` option in the System properties dialogue box.
+- Click on the `Environment variables..` option in the System properties dialogue box.
   ![image](https://github.com/derickcjohn/camstream/assets/96041141/366924ca-ea09-4b6c-845d-629221aedf3d)
 - Select `Path` within `System variables` and then click `Edit`.
 ![image](https://github.com/derickcjohn/camstream/assets/96041141/54e9997b-c402-4c32-ad40-386e17481ecb)
-- Go to the extracted ngrok directory and copy the path to the directory, it would be something like this:
+- Go to the extracted ngrok directory and copy the path to the directory. It would be something like this:
   ```
   C:\ngrok
   ```
-- In the `Edit environment variable` dialogue box, click on `New` and paste the path to the ngrok directory.
+- In the `Edit environment variable` dialogue box, click `New` and paste the path to the ngrok directory.
 ![image](https://github.com/derickcjohn/camstream/assets/96041141/dbce7384-9cf3-4024-9428-89dd6d28a1cf)
 - Then click `OK` on all three tabs.
+### 10. Getting ngrok authtoken:
+- After signing up in ngrok, you will be able to view your `authtoken`, which will be something like this:
+  ```
+  ngrok config add-authtoken <your_authtoken>
+  ```
+- Copy it.
+- Type `cmd` in the Windows search bar and select `command prompt`.
+- Paste the authtoken in the command prompt. The whole syntax will be like this:
+  ```
+  ngrok config add-authtoken <your_authtoken>
+  ```
+- Then press enter. Your auth token will be added to the configuration file.
+### 11. Getting the website online:
+
 
 ### 8. Deactivate Virtual Environment (when finished):
 ```
