@@ -12,7 +12,10 @@
 - Extract the contents of the ZIP file to your desired location.
 ### 4. Set Up Virtual Environment
 - Open a terminal or command prompt.
-- Navigate to the directory where you have extracted the ZIP file to create your virtual environment.
+- Navigate to the directory where you have extracted the ZIP file using `cd` to create your virtual environment.
+  ```
+  cd <path to the directory>
+  ```
 - Use the following command to create a virtual environment named `myenv` or anything you choose:
   ```
   python -m venv myenv
