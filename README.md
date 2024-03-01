@@ -12,6 +12,15 @@
   ```
   python -m venv myenv
   ```
+### 3. Activate Virtual Environment:
+```
+### Windows
+myenv\Scripts\activate
+
+### macOS/Linux
+source myenv/bin/activate
+```
+### Your terminal prompt will change to indicate that the virtual environment is active.
   
 ## Live
 This application offers a user-friendly interface for visualizing daily and weekly object detection data sourced from an Excel spreadsheet. Users can choose a specific date to explore corresponding daily detection counts for each hour and weekly detection counts for the selected week.
