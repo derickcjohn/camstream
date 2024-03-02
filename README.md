@@ -115,3 +115,11 @@ git add .
 git commit -m "commit message"
 git push -u origin main
 ```
+## Auto pushing with Gitwatch
+### 1. Installing Gitwatch:
+- Open command prompt and type:
+```
+git clone https://github.com/gitwatch/gitwatch.git
+cd gitwatch
+```
+-op
