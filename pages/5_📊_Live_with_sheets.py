@@ -56,3 +56,48 @@ def weekly(start_date, data):
     weekly_df.reset_index(inplace=True)
 
     return weekly_df, 'Date'
+
+with st.expander("Data Preview"):
+  st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
+  st.dataframe(data, use_container_width=True, hide_index=True)
+
+st.divider()
+
+data['time-stamp'] = pd.to_datetime(data['time-stamp'], format='%d-%m-%Y %H:%M')
+min_date = data['time-stamp'].min().date()
+max_date = data['time-stamp'].max().date()
+selected_date = st.date_input("Select Date", value=None, min_value=min_date, 
+                              max_value=max_date, format="DD/MM/YYYY")
+
+if selected_date is None:
+   st.info("Select a Date", icon="ℹ")
+   st.stop()
+
+display_mode = st.radio('Select Display Mode', ['Daily', 'Weekly'])
+
+if display_mode == 'Daily':
+    result, x_label = daily(selected_date, data)
+else:
+    result, x_label = weekly(selected_date, data)
+
+st.divider()
+st.dataframe(result, use_container_width=True, hide_index=True)
+st.divider()
+st.bar_chart(result.set_index(result.columns[0]), color=[
+    '#FFC0CB',  # Light Red (Pink)
+    # '#FF6347',  # Tomato
+    '#FF5733',  # Medium Red
+    # '#FF2400',  # Scarlet
+    '#DC143C',  # Crimson
+    # '#CD5C5C',  # Indian Red
+    '#8B0000',  # Dark Red (Maroon)
+    # '#800000'   # Dark Red (Maroon)
+])
+
+
+classes = result.columns[1:]
+selected_class = st.selectbox("Select an object from the list", classes)
+if display_mode == 'Daily':
+    st.bar_chart(result.set_index(x_label)[selected_class], color='#666666')
+else:
+    st.bar_chart(result.set_index('Date')[selected_class], color='#666666')
