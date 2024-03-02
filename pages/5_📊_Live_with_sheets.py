@@ -33,5 +33,26 @@ url = "https://docs.google.com/spreadsheets/d/11o-ZoNmn4-FdCHd0gJuZMrUC-3mYFgo2E
 # Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-df = conn.read(spreadsheet=url, usecols=[0, 1,2,3])
-st.dataframe(df)
+data = conn.read(spreadsheet=url, usecols=[0, 1,2,3])
+
+def daily(date, data):
+    df = pd.DataFrame(data)
+    df['Hour'] = pd.to_datetime(df['time-stamp']).dt.hour
+
+    filtered_df = df[df['time-stamp'].dt.date == pd.to_datetime(date).date()].drop(columns=["time-stamp"])
+
+    daily_df = filtered_df.groupby('Hour', as_index=True).agg('sum')
+    daily_df.reset_index(inplace=True)
+
+    return daily_df, 'Hour'
+
+def weekly(start_date, data):
+    df = pd.DataFrame(data)
+    df['time-stamp'] = pd.to_datetime(df['time-stamp'])
+    df['Date'] = df['time-stamp'].dt.date
+    filtered_df = df.loc[(df['Date'] >= pd.to_datetime(start_date).date()) & (df['Date'] < pd.to_datetime(start_date).date() + timedelta(days=7))].drop(columns=["time-stamp"])
+    
+    weekly_df = filtered_df.groupby('Date', as_index=True).agg('sum')
+    weekly_df.reset_index(inplace=True)
+
+    return weekly_df, 'Date'
