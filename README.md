@@ -122,4 +122,3 @@ git push -u origin main
 git clone https://github.com/gitwatch/gitwatch.git
 cd gitwatch
 ```
--op
