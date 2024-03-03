@@ -149,7 +149,7 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
   ![image](https://github.com/derickcjohn/camstream/assets/96041141/1a78c606-3060-468b-b6c9-a726819cca03)
 - Select `ADD KEY`, then `New Key`.
 - The key is going to be `json`
-- Save the file to the project directory.
+- Save the file to the project directory as `keys.json`.
 
 
 
