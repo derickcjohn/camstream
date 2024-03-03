@@ -140,11 +140,17 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
   ![image](https://github.com/derickcjohn/camstream/assets/96041141/bde2817b-5959-463f-bfa3-22464b1eef5b)
 - Fill in the Service Account details, then click `Create and Continue`.
   ![image](https://github.com/derickcjohn/camstream/assets/96041141/203fd831-f2e6-4eb0-a69e-39d88cd0f2eb)
-- Then select `Editor` role to allow write access.
+- Then select the `Editor` role to allow write access.
 - Then click `Continue` and `Done`.
-- Scroll down and click on Credentials; you can see the service account there.
+- Scroll down and click on Credentials to see the service account there.
   ![image](https://github.com/derickcjohn/camstream/assets/96041141/34aa82da-571c-4293-8c05-efc1f44b7e65)
 - Copy the service account ID and give Edit access to it in the Google Sheets.
+- Click on the service email ID and select `KEYS` at the top.
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/1a78c606-3060-468b-b6c9-a726819cca03)
+- Select `ADD KEY`, then `New Key`.
+- The key is going to be `json`
+- Save the file to the project directory.
+
 
 
 
