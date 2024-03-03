@@ -121,3 +121,10 @@ git push -u origin main
 ```
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
+### 2. Creating a project:
+- Head over to [Google APIS & services](https://console.cloud.google.com/projectselector2/apis/dashboard?supportedpurview=project) and create a new project.
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/34191cb4-ee8e-4452-8dc1-31ff781069d1)
+- Then name your project. Just make sure it's something unique.
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/3992aab2-bd62-405b-9f90-85802f18dc88)
+- After adding other details, click `CREATE`.
+
