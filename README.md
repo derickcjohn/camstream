@@ -117,7 +117,7 @@ git push -u origin main
 ```
 ## Working with Google sheets API
 ### 1. Installing libraries:
-- Open the command prompt and type:
+- Open the command prompt or the terminal in the project folder, create a virtual environment (optional), and type:
 ```
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
