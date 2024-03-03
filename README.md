@@ -115,10 +115,9 @@ git add .
 git commit -m "commit message"
 git push -u origin main
 ```
-## Auto pushing with Gitwatch
-### 1. Installing Gitwatch:
-- Open command prompt and type:
+## Working with Google sheets API
+### 1. Installing libraries:
+- Open the command prompt and type:
 ```
-git clone https://github.com/gitwatch/gitwatch.git
-cd gitwatch
+pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
