@@ -106,7 +106,7 @@ git lfs track "*.xlsx"
 ```
 git lfs push --all origin main
 ```
-- Pushing all the files to github repo.
+- Pushing all the files to GitHub repo.
 ```
 git add .
 ```
@@ -115,7 +115,7 @@ git add .
 git commit -m "commit message"
 git push -u origin main
 ```
-## Working with Google sheets API
+## Working with Google Sheets API
 ### 1. Installing libraries:
 - Open the command prompt or the terminal in the project folder, create a virtual environment (optional), and type:
 ```
@@ -127,4 +127,28 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 - Then name your project. Just make sure it's something unique.
   ![image](https://github.com/derickcjohn/camstream/assets/96041141/3992aab2-bd62-405b-9f90-85802f18dc88)
 - After adding other details, click `CREATE`.
+- Once the project is created, you need to activate it.
+- Select the project
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/6b8958a1-4f39-44cb-9698-c53f4f08739a)
+- Now, you need to enable the Google Sheets API.
+- Search for it, and select `Google Sheets API`.
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/2aedc975-2f10-4a19-a173-e329e85be338)
+- Then click on `Enable`.
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/c9f81b59-5a09-467a-9273-ad0b39518444)
+- Click on `Create Credentials`
+- Select `Application Data`.
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/bde2817b-5959-463f-bfa3-22464b1eef5b)
+- Fill in the Service Account details, then click `Create and Continue`.
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/203fd831-f2e6-4eb0-a69e-39d88cd0f2eb)
+- Then select `Editor` role to allow write access.
+- Then click `Continue` and `Done`.
+- Scroll down and click on Credentials; you can see the service account there.
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/34aa82da-571c-4293-8c05-efc1f44b7e65)
+- Copy the service account ID and give Edit access to it in the Google Sheets.
+
+
+
+
+
+
 
