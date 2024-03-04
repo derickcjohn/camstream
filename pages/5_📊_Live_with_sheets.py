@@ -32,8 +32,15 @@ st.markdown("""
 st.header("Exploring Camera Stream Data")
 # st.text("This page allows you to delve into your Camstream data collected on various dates.")
 url = "https://docs.google.com/spreadsheets/d/11o-ZoNmn4-FdCHd0gJuZMrUC-3mYFgo2EheHKIJfhvE/edit?usp=sharing"
-# Create a connection object.
-conn = st.connection("gsheets", type=GSheetsConnection)
+
+try:
+    # Create a connection object.
+    conn = st.connection("mygsheets", type=GSheetsConnection)
+    
+except Exception as e:
+    
+    st.error(f"An error occurred while establishing the connection: {str(e)}", icon="❌")
+    st.stop()
 
 data = conn.read(spreadsheet=url, ttl="1m", usecols=[0, 1, 2, 3, 4])
 
