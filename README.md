@@ -63,6 +63,8 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
   ![image](https://github.com/derickcjohn/camstream/assets/96041141/a1310e03-fc0e-4a29-b269-5f71613f23c9)
 - This will bring you to the “Create a new repository” page.
 - In the field “Repository name”, type in a suitable name, click “Public,” and click “Create repository”
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/d6095b22-5236-4a2b-b8a8-f45a3e8842d0)
+
 - Your repo is all setup!
 - Add all the necessary files to the GitHub repository.
 ### 2. Streamlit Cloud:
