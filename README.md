@@ -56,11 +56,8 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 - Select `ADD KEY`, then `New Key`.
 - The key is going to be `json`
 - Save the file to the project directory as `keys.json`.
-
-
-
-
-
-
-
-
+## Hosting website using Streamlit Cloud
+### 1. Creating an account in GitHub:
+- Add all the necessary files to the GitHub repository.
+### 2. Streamlit Cloud:
+- Go to the [Streamlit cloud](https://streamlit.io/cloud) and sign up with your GitHub account.
