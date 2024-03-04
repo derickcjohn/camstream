@@ -58,6 +58,12 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 - Save the file to the project directory as `keys.json`.
 ## Hosting website using Streamlit Cloud
 ### 1. Creating an account in GitHub:
+- Sign up on GitHub
+- Create a new repository
+  ![image](https://github.com/derickcjohn/camstream/assets/96041141/a1310e03-fc0e-4a29-b269-5f71613f23c9)
+- This will bring you to the “Create a new repository” page.
+- In the field “Repository name”, type in a suitable name, click “Public,” and click “Create repository”
+- Your repo is all setup!
 - Add all the necessary files to the GitHub repository.
 ### 2. Streamlit Cloud:
 - Go to the [Streamlit cloud](https://streamlit.io/cloud) and sign up with your GitHub account.
