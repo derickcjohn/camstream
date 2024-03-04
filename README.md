@@ -7,9 +7,9 @@
 - Follow the installation instructions provided on the website.
 ### 2. Set Up Virtual Environment
 - Open a terminal or command prompt.
-- Navigate to the project's directory using `cd` to create your virtual environment.
+- To create your virtual environment, navigate to the project's directory using `cd <path to the directory>`. Below is an example
   ```
-  cd <path to the directory>
+  cd D:\Documents\Project
   ```
 - Use the following command to create a virtual environment named `myenv` or anything you choose:
   ```
