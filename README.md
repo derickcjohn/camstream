@@ -62,7 +62,7 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 ### 2. Streamlit Cloud:
 - Go to the [Streamlit cloud](https://streamlit.io/cloud) and sign up with your GitHub account.
 - Enter your GitHub credentials and click “Authorize Streamlit” to let Streamlit access your GitHub account.
-- Click on the down arrow next to `New app`, and select `using existing repo`.
+- Click on the down arrow next to "New app", and select "Use existing repo".
   ![image](https://github.com/derickcjohn/camstream/assets/96041141/b6796601-d0a7-4ef9-b764-57ee357a6973)
 - Type in the name of your repo, the Branch which will most probably be `main`, the name of the main `.py` file that will be running, and an app URL with which users can access your website.
   ![image](https://github.com/derickcjohn/camstream/assets/96041141/7c1bdca4-89af-4138-9b74-aa7a50df7e75)
