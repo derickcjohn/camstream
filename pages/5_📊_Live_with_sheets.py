@@ -35,7 +35,7 @@ url = "https://docs.google.com/spreadsheets/d/11o-ZoNmn4-FdCHd0gJuZMrUC-3mYFgo2E
 
 try:
     # Create a connection object.
-    conn = st.connection("gsheets", type=myGSheetsConnection)
+    conn = st.connection("gsheets", type=GSheetsConnection)
     
 except Exception as e:
     
