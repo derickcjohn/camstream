@@ -9,6 +9,7 @@ skia-python
 SQLAlchemy
 st-gsheets-connection
 streamlit
+streamlit-server-state
 streamlit-webrtc
 twilio~=8.10.1
 yolov5
