@@ -10,7 +10,7 @@ video_placeholder = st.empty()
 
 # Socket connection
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host_ip = "61.3.150.20"  # Replace with the actual IP where your server.py is running
+host_ip = "61.3.150.20"  # Replace with the actual IP where your c.py is running
 port = 9999
 socket_address = (host_ip, port)
 
