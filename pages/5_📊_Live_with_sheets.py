@@ -42,7 +42,7 @@ except Exception as e:
     st.error(f"An error occurred while establishing the connection: {str(e)}", icon="❌")
     st.stop()
 
-data = conn.read(spreadsheet=url, ttl="0", usecols=[0, 1, 2, 3, 4], limit=50)
+data = conn.read(spreadsheet=url, ttl="0", usecols=[0, 1, 2, 3, 4])
 
 def daily(date, data):
     df = pd.DataFrame(data)
