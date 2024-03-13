@@ -42,7 +42,7 @@ except Exception as e:
     st.error(f"An error occurred while establishing the connection: {str(e)}", icon="❌")
     st.stop()
 
-data = conn.read(spreadsheet=url, ttl="0", usecols=[0, 1, 2, 3, 4])
+data = conn.read(spreadsheet=url, ttl="0", usecols=[0, 1, 2, 3, 4], limit=50)
 
 def daily(date, data):
     df = pd.DataFrame(data)
@@ -90,7 +90,7 @@ else:
     result, x_label = weekly(selected_date, data)
 
 st.divider()
-st.dataframe(result, use_container_width=True, hide_index=True)
+st.dataframe(result, use_container_width=True, hide_index=False)
 st.divider()
 st.bar_chart(result.set_index(result.columns[0]), color=[
     '#FFC0CB',  # Light Red (Pink)
