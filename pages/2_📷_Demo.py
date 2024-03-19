@@ -22,6 +22,11 @@ st.set_page_config(page_title="Cam stream Data - Demo",
 #             </style>
 #             """
 # st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.sidebar.page_link(
+  "https://camstream.streamlit.app/Demo",  
+  label="Demo",
+  icon="📷",
+  disabled=True)
 
 st.header("Webstream for Live Object Detection")
 st.info("This is a Demo of simple Object Detection.", icon="ℹ️")
