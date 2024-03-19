@@ -13,7 +13,7 @@ image = Image.open('icon.png')
 
 st.set_page_config(page_title="Cam stream Data - Demo", 
                    page_icon=image, 
-                   # initial_sidebar_state="expanded",
+                   initial_sidebar_state="expanded",
                    layout="wide")
 
 # hide_streamlit_style = """
