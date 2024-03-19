@@ -21,7 +21,7 @@ st.sidebar.page_link(
   label="Live",
   icon="📊")
 st.sidebar.page_link(
-  "",  
+  "pages/2_📷_Demo.py",  
   label="Demo",
   icon="📷",
   disabled=True,
