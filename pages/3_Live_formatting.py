@@ -120,6 +120,9 @@ selected_class = st.selectbox("Select an object from the list", classes)
 if display_mode == 'Daily':
     filtered_result = result[[x_label, selected_class]]  
     st.dataframe(filtered_result, use_container_width=True, hide_index=True)
-    st.bar_chart(result.set_index(x_label)[selected_class], color='#666666')
+    st.bar_chart(filtered_result, x = x_label, color='#666666')
+    # st.bar_chart(result.set_index(x_label)[selected_class], color='#666666')
 else:
+    filtered_result = result[[x_label, selected_class]]  
+    st.dataframe(filtered_result, use_container_width=True, hide_index=True)
     st.bar_chart(result.set_index('Date')[selected_class], color='#666666')
