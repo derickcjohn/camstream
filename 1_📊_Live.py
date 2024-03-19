@@ -72,8 +72,8 @@ with st.expander("Data Preview"):
 
 st.divider()
 
-data['time-stamp'] = pd.to_datetime(data['time-stamp'], format='%d/%m/%Y %H:%M:%S')
-set_date = data['time-stamp'].date()
+data['time-stamp'] = pd.to_datetime(data['time-stamp'], format='%d/%m/%Y')
+set_date = data['time-stamp']
 st.write(list(set(set_date)))
 min_date = data['time-stamp'].min().date()
 max_date = data['time-stamp'].max().date()
