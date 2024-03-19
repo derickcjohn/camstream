@@ -110,8 +110,7 @@ st.bar_chart(result.set_index(result.columns[0]), color=[
     # '#800000'   # Dark Red (Maroon)
 ])
 c = alt.Chart(result).mark_bar().encode(
-    x='a',
-    y='b'
+    x='Hour',
 )
 st.altair_chart(c, use_container_width=True)
 
