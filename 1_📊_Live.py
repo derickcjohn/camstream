@@ -1,11 +1,9 @@
+import streamlit as st
 import pandas as pd
 from datetime import timedelta
-import streamlit as st
+from streamlit_gsheets import GSheetsConnection
 from PIL import Image
-import os
 
-
-# Load the image
 image = Image.open('icon.png')
 
 st.set_page_config(page_title="Cam stream Data - Live", 
@@ -33,14 +31,18 @@ st.markdown("""
 
 st.header("Exploring Camera Stream Data")
 # st.text("This page allows you to delve into your Camstream data collected on various dates.")
+url = "https://docs.google.com/spreadsheets/d/11o-ZoNmn4-FdCHd0gJuZMrUC-3mYFgo2EheHKIJfhvE/edit?usp=sharing"
 
-@st.cache_data(ttl=10)
-def load_data(path):
-  df = pd.read_excel(path)
-  new_headers = {0: 'Cans', 1: 'Milk Jugs', 2: 'Non-white Jugs', 3: 'Plastic bottles'}
-  df.rename(columns=new_headers, inplace=True)
-  return df
+try:
+    # Create a connection object.
+    conn = st.connection("gsheets", type=GSheetsConnection)
+    
+except Exception as e:
+    
+    st.error(f"An error occurred while establishing the connection: {str(e)}", icon="❌")
+    st.stop()
 
+data = conn.read(spreadsheet=url, ttl="0")
 
 def daily(date, data):
     df = pd.DataFrame(data)
@@ -64,21 +66,13 @@ def weekly(start_date, data):
 
     return weekly_df, 'Date'
 
-file_path = 'count_result.xlsx'
-if not os.path.exists(file_path):
-    st.error("No detections till now", icon="🛑")
-    data = None
-    st.stop()
-else:
-    data = load_data(file_path)
-
 with st.expander("Data Preview"):
   st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
   st.dataframe(data, use_container_width=True, hide_index=True)
 
 st.divider()
 
-data['time-stamp'] = pd.to_datetime(data['time-stamp'], format='%d-%m-%Y %H:%M')
+data['time-stamp'] = pd.to_datetime(data['time-stamp'], format='%d/%m/%Y %H:%M:%S')
 min_date = data['time-stamp'].min().date()
 max_date = data['time-stamp'].max().date()
 selected_date = st.date_input("Select Date", value=None, min_value=min_date, 
