@@ -24,7 +24,7 @@ st.sidebar.page_link(
   "pages/2_📷_Demo.py",  
   label="Demo",
   icon="📷",
-  disabled=False)
+  disabled=True)
 st.sidebar.success("Select a page from above")
 
 st.markdown("""
