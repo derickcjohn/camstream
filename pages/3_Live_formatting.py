@@ -118,7 +118,7 @@ st.bar_chart(result, x = x_label, color=[
 classes = result.columns[1:]
 selected_class = st.selectbox("Select an object from the list", classes)
 if display_mode == 'Daily':
-    st.dataframe(result.set_index(x_label)[selected_class], use_container_width=True, hide_index=True)
+    st.dataframe(result.set_index[selected_class], use_container_width=True, hide_index=True)
     st.bar_chart(result.set_index(x_label)[selected_class], color='#666666')
 else:
     st.bar_chart(result.set_index('Date')[selected_class], color='#666666')
