@@ -109,11 +109,11 @@ st.bar_chart(result.set_index(result.columns[0]), color=[
     '#8B0000',  # Dark Red (Maroon)
     # '#800000'   # Dark Red (Maroon)
 ])
-alt.Chart(result).mark_bar().encode(
+c = alt.Chart(result).mark_bar().encode(
     x='a',
     y='b'
 )
-
+st.altair_chart(c, use_container_width=True)
 
 classes = result.columns[1:]
 selected_class = st.selectbox("Select an object from the list", classes)
