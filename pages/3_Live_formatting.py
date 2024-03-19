@@ -99,8 +99,8 @@ else:
 st.divider()
 st.dataframe(result, use_container_width=True, hide_index=True)
 st.divider()
-st.dataframe(result.set_index(result.columns[0]), use_container_width=True, hide_index=True)
-st.bar_chart(result.set_index(result.columns[0]), color=[
+# st.dataframe(result.set_index(result.columns[0]), use_container_width=True, hide_index=True)
+st.bar_chart(result, x = x_label, color=[
     '#FFC0CB',  # Light Red (Pink)
     # '#FF6347',  # Tomato
     '#FF5733',  # Medium Red
