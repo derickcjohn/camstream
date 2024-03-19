@@ -17,11 +17,11 @@ st.set_page_config(page_title="Cam stream Data - Live",
 #             </style>
 #             """
 # st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-st.sidebar.success("Select a page from above")
 st.sidebar.page_link(
   "pages/2_📷_Demo.py",
   label="Demo",
             disabled=True)
+st.sidebar.success("Select a page from above")
 
 st.markdown("""
 <style>
