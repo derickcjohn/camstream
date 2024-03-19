@@ -109,6 +109,10 @@ st.bar_chart(result.set_index(result.columns[0]), color=[
     '#8B0000',  # Dark Red (Maroon)
     # '#800000'   # Dark Red (Maroon)
 ])
+alt.Chart(result).mark_bar().encode(
+    x='a',
+    y='b'
+)
 
 
 classes = result.columns[1:]
