@@ -5,7 +5,6 @@ from streamlit_gsheets import GSheetsConnection
 from PIL import Image
 
 image = Image.open('icon.png')
-st.set_option("client.showSidebarNavigation", False)
 
 st.set_page_config(page_title="Cam stream Data - Live", 
                    page_icon=image, 
@@ -17,6 +16,10 @@ st.set_page_config(page_title="Cam stream Data - Live",
 #             </style>
 #             """
 # st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.sidebar.page_link(
+  "1_📊_Live.py",  
+  label="Live",
+  icon="📊")
 st.sidebar.page_link(
   "https://camstream.streamlit.app/Demo",  
   label="Demo",
