@@ -76,7 +76,7 @@ data['time-stamp'] = pd.to_datetime(data['time-stamp'], format='%d/%m/%Y %H:%M:%
 set_date = list(set(data['time-stamp']))
 min_date = data['time-stamp'].min().date()
 max_date = data['time-stamp'].max().date()
-selected_date = st.date_input("Select Date", value=set_date, min_value=min_date, 
+selected_date = st.date_input("Select Date", value=None, min_value=min_date, 
                               max_value=max_date, format="DD/MM/YYYY")
 
 if selected_date is None:
