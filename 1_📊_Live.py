@@ -24,7 +24,7 @@ st.sidebar.page_link(
   "https://camstream.streamlit.app/Demo",  
   label="Demo",
   icon="📷",
-  disabled=True)
+  disabled=False)
 st.sidebar.success("Select a page from above")
 
 st.markdown("""
