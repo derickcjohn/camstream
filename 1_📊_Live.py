@@ -95,7 +95,7 @@ if selected_date is None:
     st.stop()
 
 if selected_date not in set_date:
-    st.warning("Selected date is not available, please select another date.", icon="⚠️")
+    st.warning("Data not available for the selected date, please select another date.", icon="⚠️")
     st.stop()
 
 display_mode = st.radio('Select Display Mode', ['Daily', 'Weekly'])
