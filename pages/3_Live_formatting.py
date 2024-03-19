@@ -1,5 +1,4 @@
 import streamlit as st
-import altair as alt
 import pandas as pd
 from datetime import timedelta
 from streamlit_gsheets import GSheetsConnection
