@@ -98,7 +98,7 @@ else:
 st.divider()
 st.dataframe(result, use_container_width=True, hide_index=True)
 st.divider()
-st.bar_chart(result.set_index(result.columns[0]), x=x_label, y='Count', color=[
+st.bar_chart(result.set_index(result.columns[0]), color=[
     '#FFC0CB',  # Light Red (Pink)
     # '#FF6347',  # Tomato
     '#FF5733',  # Medium Red
@@ -113,6 +113,6 @@ st.bar_chart(result.set_index(result.columns[0]), x=x_label, y='Count', color=[
 classes = result.columns[1:]
 selected_class = st.selectbox("Select an object from the list", classes)
 if display_mode == 'Daily':
-    st.bar_chart(result.set_index(x_label)[selected_class], x='Hour', y='Count', color='#666666')
+    st.bar_chart(result.set_index(x_label)[selected_class], x=Hour, y='Count', color='#666666')
 else:
-    st.bar_chart(result.set_index('Date')[selected_class], x='Date', y='Count', color='#666666')
+    st.bar_chart(result.set_index('Date')[selected_class], x=Date, y='Count', color='#666666')
