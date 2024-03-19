@@ -20,7 +20,7 @@ st.set_page_config(page_title="Cam stream Data - Live",
 st.sidebar.page_link(
   "pages/2_📷_Demo.py",  
   label="Demo",
-  icon="📷"
+  icon="📷",
   disabled=True)
 # st.sidebar.success("Select a page from above")
 
