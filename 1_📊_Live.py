@@ -113,6 +113,6 @@ st.bar_chart(result.set_index(result.columns[0]), color=[
 classes = result.columns[1:]
 selected_class = st.selectbox("Select an object from the list", classes)
 if display_mode == 'Daily':
-    st.bar_chart(result.set_index(x_label)[selected_class], color='#666666')
+    st.bar_chart(result.set_index(x_label)[selected_class], x='Hour', y='Count', color='#666666')
 else:
-    st.bar_chart(result.set_index('Date')[selected_class], color='#666666')
+    st.bar_chart(result.set_index('Date')[selected_class], x='Date', y='Count', color='#666666')
