@@ -73,7 +73,7 @@ with st.expander("Data Preview"):
 st.divider()
 
 data['time-stamp'] = pd.to_datetime(data['time-stamp'], format='%d/%m/%Y %H:%M:%S')
-st.write(list(data['time-stamp']))
+st.write(list(set(data['time-stamp'].date())))
 min_date = data['time-stamp'].min().date()
 max_date = data['time-stamp'].max().date()
 selected_date = st.date_input("Select Date", value=None, min_value=min_date, 
