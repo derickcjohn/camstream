@@ -11,14 +11,14 @@ import numpy as np
 # Load the image
 image = Image.open('icon.png')
 
-# st.set_page_config(page_title="Cam stream Data - Demo", 
-#                    page_icon=image, 
-#                    initial_sidebar_state="expanded",
-#                    layout="wide")
-
 st.set_page_config(page_title="Cam stream Data - Demo", 
-                   page_icon=image,
+                   page_icon=image, 
+                   initial_sidebar_state="expanded",
                    layout="wide")
+
+# st.set_page_config(page_title="Cam stream Data - Demo", 
+#                    page_icon=image,
+#                    layout="wide")
 
 
 # hide_streamlit_style = """
