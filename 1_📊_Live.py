@@ -25,7 +25,7 @@ st.sidebar.page_link(
   label="Demo",
   icon="📷",
   disabled=True)
-# st.sidebar.success("Select a page from above")
+st.sidebar.success("Select a page from above")
 
 st.markdown("""
 <style>
