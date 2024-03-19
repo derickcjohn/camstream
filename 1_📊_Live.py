@@ -98,21 +98,12 @@ else:
 st.divider()
 st.dataframe(result, use_container_width=True, hide_index=True)
 st.divider()
-# st.dataframe(result.set_index(result.columns[0]), use_container_width=True, hide_index=True)
 st.bar_chart(result, x = x_label, color=[
-    '#FFC0CB',  # Light Red (Pink)
-    # '#FF6347',  # Tomato
-    '#FF5733',  # Medium Red
-    # '#FF2400',  # Scarlet
-    '#DC143C',  # Crimson
-    # '#CD5C5C',  # Indian Red
-    '#8B0000',  # Dark Red (Maroon)
-    # '#800000'   # Dark Red (Maroon)
+    '#FFC0CB', 
+    '#FF5733',  
+    '#DC143C', 
+    '#8B0000',  
 ])
-# c = alt.Chart(result).mark_bar().encode(
-#     x='Hour',
-# )
-# st.altair_chart(c, use_container_width=True)
 
 classes = result.columns[1:]
 selected_class = st.selectbox("Select an object from the list", classes)
