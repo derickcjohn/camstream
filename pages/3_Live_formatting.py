@@ -119,7 +119,8 @@ classes = result.columns[1:]
 selected_class = st.selectbox("Select an object from the list", classes)
 if display_mode == 'Daily':
     filtered_result = result[[x_label, selected_class]]  
-    st.bar_chart(filtered_result, x = x_label, color='#666666')
+    chart = st.bar_chart(filtered_result, x=x_label, color='#666666')  # Plot the bar chart
+    chart.set_xticklabels(chart.get_xticklabels(), rotation=45, horizontalalignment='right')
 else:
     filtered_result = result[[x_label, selected_class]]  
     st.bar_chart(filtered_result, x = x_label, color='#666666')
