@@ -73,16 +73,20 @@ with st.expander("Data Preview"):
 st.divider()
 
 data['time-stamp'] = pd.to_datetime(data['time-stamp'], format='%d/%m/%Y %H:%M:%S')
-set_date = list(set(data['time-stamp']))
+set_date = set(data['time-stamp'].dt.date)
 st.write(set_date)
 min_date = data['time-stamp'].min().date()
 max_date = data['time-stamp'].max().date()
 selected_date = st.date_input("Select Date", value=None, min_value=min_date, 
                               max_value=max_date, format="DD/MM/YYYY")
 
-if selected_date is None or not in set_date:
-   st.info("Select a Date", icon="ℹ")
-   st.stop()
+if selected_date is None:
+    st.info("Select a Date", icon="ℹ")
+    st.stop()
+
+if selected_date not in set_date:
+    st.warning("Selected date is not available")
+    st.stop()
 
 display_mode = st.radio('Select Display Mode', ['Daily', 'Weekly'])
 
