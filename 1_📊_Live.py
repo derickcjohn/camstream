@@ -110,7 +110,6 @@ else:
 st.divider()
 st.dataframe(result, use_container_width=True, hide_index=True)
 st.divider()
-st.caption(f"Graph showing the total and individual number of item detected for each {x_label}.")
 st.markdown(
     f'<p style="text-align:center;">Graph showing the total and individual number of item detected for each {x_label}.</p>',
     unsafe_allow_html=True
@@ -127,6 +126,10 @@ selected_class = st.selectbox("Select an object from the list", classes)
 # if display_mode == 'Daily':
 filtered_result = result[[x_label, selected_class]]  
 st.caption(f"Graph showing the number of detected _{selected_class}_ for each {x_label}.")
+st.markdown(
+    f'<p style="text-align:center;">Graph showing the number of detected _{selected_class}_ for each {x_label}.</p>',
+    unsafe_allow_html=True
+)
 st.bar_chart(filtered_result, x=x_label, color='#666666')
 
 # else:
