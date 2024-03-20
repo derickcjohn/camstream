@@ -122,7 +122,7 @@ st.bar_chart(result, x = x_label, color=[
 ])
 
 classes = result.columns[1:]
-selected_class = st.selectbox("Select an object from the list", classes)
+selected_class = st.selectbox("Select an item from the list to view its individual count", classes)
 # if display_mode == 'Daily':
 filtered_result = result[[x_label, selected_class]]  
 caption_text = f"Graph showing the number of detected <i>{selected_class}</i> for each {x_label}."
