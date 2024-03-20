@@ -111,6 +111,10 @@ st.divider()
 st.dataframe(result, use_container_width=True, hide_index=True)
 st.divider()
 st.caption(f"Graph showing the total and individual number of item detected for each {x_label}.")
+st.markdown(
+    f'<p style="text-align:center;">Graph showing the total and individual number of item detected for each {x_label}.</p>',
+    unsafe_allow_html=True
+)
 st.bar_chart(result, x = x_label, color=[
     '#FFC0CB', 
     '#FF5733',  
