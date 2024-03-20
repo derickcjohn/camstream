@@ -19,7 +19,8 @@ st.set_page_config(page_title="Cam stream Data - Live",
 st.sidebar.page_link(
   "1_📊_Live.py",  
   label="Live",
-  icon="📊")
+  icon="📊",
+  help="Currently viewing the Page")
 st.sidebar.page_link(
   "1_📊_Live.py",
   # "pages/2_📷_Demo.py",  
