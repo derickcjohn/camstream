@@ -110,20 +110,20 @@ else:
 st.divider()
 st.dataframe(result, use_container_width=True, hide_index=True)
 st.divider()
-st.subheader(f"Graph showing the total and individual number of item detected for each {x_label}.", anchor=False)
 st.bar_chart(result, x = x_label, color=[
     '#FFC0CB', 
     '#FF5733',  
     '#DC143C', 
     '#8B0000',  
 ])
+st.caption(f"Graph showing the total and individual number of item detected for each {x_label}.")
 
 classes = result.columns[1:]
 selected_class = st.selectbox("Select an object from the list", classes)
 # if display_mode == 'Daily':
 filtered_result = result[[x_label, selected_class]]  
-st.caption(f"Graph showing the number of detected _{selected_class}_ for each {x_label}.", )
 st.bar_chart(filtered_result, x=x_label, color='#666666')
+st.caption(f"Graph showing the number of detected _{selected_class}_ for each {x_label}.)
 # else:
 #     filtered_result = result[[x_label, selected_class]]  
 #     st.bar_chart(filtered_result, x = x_label, color='#666666')
