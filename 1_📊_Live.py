@@ -50,7 +50,7 @@ try:
     
 except Exception as e:
     
-    st.error(f"An error occurred while establishing the connection: {str(e)}", icon="❌")
+    # st.error(f"An error occurred while establishing the connection: {str(e)}", icon="❌")
     st.exception(e)
     st.stop()
 
