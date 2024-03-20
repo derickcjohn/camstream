@@ -125,7 +125,7 @@ classes = result.columns[1:]
 selected_class = st.selectbox("Select an item to view its individual count", classes)
 filtered_result = result[[x_label, selected_class]]  
 st.bar_chart(filtered_result, x=x_label, color='#666666')
-caption_text = f"Graph showing the number of detected <i>{selected_class}</i> for each {x_label}."
+caption_text = f"Graph depicting the number of <i>{selected_class}</i> detected for each {x_label}."
 st.markdown(
     f'<p style="text-align:center;">{caption_text}</p>',
     unsafe_allow_html=True
