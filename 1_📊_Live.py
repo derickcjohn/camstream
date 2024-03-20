@@ -89,11 +89,11 @@ set_date = set(data['time-stamp'].dt.date)
 
 min_date = data['time-stamp'].min().date()
 max_date = data['time-stamp'].max().date()
-selected_date = st.date_input("Select Date", value=None, min_value=min_date, 
+selected_date = st.date_input("Date", value=None, min_value=min_date, 
                               max_value=max_date, format="DD/MM/YYYY")
 
 if selected_date is None:
-    st.info("Date", icon="ℹ")
+    st.info("Pick a Date", icon="ℹ")
     st.stop()
 
 if selected_date not in set_date:
