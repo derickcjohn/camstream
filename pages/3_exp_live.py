@@ -57,7 +57,7 @@ except Exception as e:
 
 data = conn.read(spreadsheet=url, ttl="0")
 
-rows_per_page = 50
+rows_per_page = 10
 
 def display_paginated_dataframe(data, start_index, end_index):
     page_data = data.iloc[start_index:end_index]
