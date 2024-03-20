@@ -50,7 +50,7 @@ placeholder = st.empty()
 placeholder.text("Hello")
 time.sleep(2)
 # Replace the text with a chart:
-placeholder.line_chart({"data": [1, 5, 2, 6]})
+line = placeholder.line_chart({"data": [1, 5, 2, 6]})
 time.sleep(2)
 
 # Replace the chart with several elements:
