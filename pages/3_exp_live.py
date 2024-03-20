@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import timedelta
 from streamlit_gsheets import GSheetsConnection
 from PIL import Image
+import time
 
 image = Image.open('icon.png')
 
@@ -47,14 +48,17 @@ placeholder = st.empty()
 
 # Replace the placeholder with some text:
 placeholder.text("Hello")
-
+time.sleep(2)
 # Replace the text with a chart:
 placeholder.line_chart({"data": [1, 5, 2, 6]})
+time.sleep(2)
 
 # Replace the chart with several elements:
 with placeholder.container():
     st.write("This is one element")
+    time.sleep(2)
     st.write("This is another")
+    time.sleep(2)
 
 # Clear all those elements:
 placeholder.empty()
