@@ -41,7 +41,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.header("Exploring Camera Stream Data")
+st.header("Exploring Camera Stream Data", anchor=False)
 # st.text("This page allows you to delve into your Camstream data collected on various dates.")
 url = "https://docs.google.com/spreadsheets/d/11o-ZoNmn4-FdCHd0gJuZMrUC-3mYFgo2EheHKIJfhvE/edit?usp=sharing"
 
