@@ -110,6 +110,7 @@ else:
 st.divider()
 st.dataframe(result, use_container_width=True, hide_index=True)
 st.divider()
+st.write(f"Graph showing the total and individual item count for each {x_label}.")
 st.bar_chart(result, x = x_label, color=[
     '#FFC0CB', 
     '#FF5733',  
