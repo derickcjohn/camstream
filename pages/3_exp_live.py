@@ -42,6 +42,23 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.header("Expirimental Live Page")
+
+placeholder = st.empty()
+
+# Replace the placeholder with some text:
+placeholder.text("Hello")
+
+# Replace the text with a chart:
+placeholder.line_chart({"data": [1, 5, 2, 6]})
+
+# Replace the chart with several elements:
+with placeholder.container():
+    st.write("This is one element")
+    st.write("This is another")
+
+# Clear all those elements:
+placeholder.empty()
+
 # st.text("This page allows you to delve into your Camstream data collected on various dates.")
 url = "https://docs.google.com/spreadsheets/d/11o-ZoNmn4-FdCHd0gJuZMrUC-3mYFgo2EheHKIJfhvE/edit?usp=sharing"
 
