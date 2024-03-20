@@ -56,6 +56,13 @@ except Exception as e:
 
 data = conn.read(spreadsheet=url, ttl="0")
 
+def display_paginated_dataframe(data, page, rows_per_page):
+    start_index = (page - 1) * rows_per_page
+    end_index = min(start_index + rows_per_page, len(data))
+    page_data = data.iloc[start_index:end_index]
+    st.dataframe(page_data, use_container_width=True, hide_index=True)
+    return page_data
+  
 def daily(date, data):
     df = pd.DataFrame(data)
     df['Hour'] = pd.to_datetime(df['time-stamp']).dt.hour
