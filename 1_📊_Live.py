@@ -125,7 +125,7 @@ classes = result.columns[1:]
 selected_class = st.selectbox("Select an object from the list", classes)
 # if display_mode == 'Daily':
 filtered_result = result[[x_label, selected_class]]  
-caption_text = f"Graph showing the number of detected _{selected_class}_ for each {x_label}."
+caption_text = f"Graph showing the number of detected <i>{selected_class}</i> for each {x_label}."
 st.markdown(
     f'<p style="text-align:center;">{caption_text}</p>',
     unsafe_allow_html=True
