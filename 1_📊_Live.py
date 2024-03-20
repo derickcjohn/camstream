@@ -93,14 +93,14 @@ selected_date = st.date_input("Select Date", value=None, min_value=min_date,
                               max_value=max_date, format="DD/MM/YYYY")
 
 if selected_date is None:
-    st.info("Select a Date", icon="ℹ")
+    st.info("Date", icon="ℹ")
     st.stop()
 
 if selected_date not in set_date:
     st.warning("Data not available for the selected date, please select another date.", icon="⚠️")
     st.stop()
 
-display_mode = st.radio('Select Display Mode', ['Daily', 'Weekly'])
+display_mode = st.radio('Display Mode', ['Daily', 'Weekly'])
 
 if display_mode == 'Daily':
     result, x_label = daily(selected_date, data)
