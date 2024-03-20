@@ -116,7 +116,7 @@ st.bar_chart(result, x = x_label, color=[
     '#8B0000',  
 ])
 st.markdown(
-    f'<p style="text-align:center;">Graph showing the total and individual number of item detected for each {x_label}.</p>',
+    f'<p style="text-align:center;">Graph displaying the total and individual counts of items detected for each {x_label}.</p>',
     unsafe_allow_html=True
 )
 st.divider()
