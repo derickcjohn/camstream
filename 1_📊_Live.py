@@ -80,7 +80,7 @@ def weekly(start_date, data):
 
 with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
-  st.dataframe(data.iloc[-50:], use_container_width=True, hide_index=False)
+  st.dataframe(data.iloc[-50:], use_container_width=True, hide_index=True)
 
 st.divider()
 
