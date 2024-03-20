@@ -90,12 +90,12 @@ def weekly(start_date, data):
 # Calculate total number of pages
 total_pages = (len(data) + rows_per_page - 1) // rows_per_page
 
-# Display current page number
-st.write(f"Page: {page}/{total_pages}")
-
 # Display paginated dataframe based on page number
 page = st.number_input("Enter page number:", value=1, min_value=1, max_value=total_pages, step=1)
 page_data = display_paginated_dataframe(data, page, rows_per_page)
+
+# Display current page number
+st.write(f"Page: {page}/{total_pages}")
 
 # Display pagination controls
 col1, col2, col3 = st.columns(3)
