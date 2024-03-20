@@ -46,12 +46,11 @@ url = "https://docs.google.com/spreadsheets/d/11o-ZoNmn4-FdCHd0gJuZMrUC-3mYFgo2E
 
 try:
     # Create a connection object.
-    conn = st.connection("gsheets", type=myGSheetsConnection)
+    conn = st.connection("gsheets", type=GSheetsConnection)
     
 except Exception as e:
     
-    # st.error(f"An error occurred while establishing the connection: {str(e)}", icon="❌")
-    st.exception(e)
+    st.error(f"An error occurred while establishing the connection: {str(e)}", icon="❌")
     st.stop()
 
 data = conn.read(spreadsheet=url, ttl="0")
