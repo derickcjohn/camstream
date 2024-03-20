@@ -94,7 +94,7 @@ page = 1
 start_index = (page - 1) * rows_per_page
 end_index = min(start_index + rows_per_page, len(data))
 data_display_placeholder = st.empty()  # Placeholder to display DataFrame
-page_data = data_display_placeholder.display_paginated_dataframe(data, start_index, end_index)
+page_data = display_paginated_dataframe(data, start_index, end_index)
 
 # Display pagination controls
 col1, col2 = st.columns(2)
