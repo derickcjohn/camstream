@@ -123,7 +123,7 @@ selected_class = st.selectbox("Select an object from the list", classes)
 # if display_mode == 'Daily':
 filtered_result = result[[x_label, selected_class]]  
 st.bar_chart(filtered_result, x=x_label, color='#666666')
-st.caption(f"Graph showing the number of detected _{selected_class}_ for each {x_label}.)
+st.caption(f"Graph showing the number of detected _{selected_class}_ for each {x_label}.")
 # else:
 #     filtered_result = result[[x_label, selected_class]]  
 #     st.bar_chart(filtered_result, x = x_label, color='#666666')
