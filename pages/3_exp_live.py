@@ -6,7 +6,7 @@ from PIL import Image
 
 image = Image.open('icon.png')
 
-st.set_page_config(page_title="Cam stream Data - Live", 
+st.set_page_config(page_title="Cam stream Data - Exp-Live", 
                    page_icon=image, 
                   layout="wide")
 
@@ -41,7 +41,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.header("Exploring Camera Stream Data")
+st.header("Expirimental Live Page")
 # st.text("This page allows you to delve into your Camstream data collected on various dates.")
 url = "https://docs.google.com/spreadsheets/d/11o-ZoNmn4-FdCHd0gJuZMrUC-3mYFgo2EheHKIJfhvE/edit?usp=sharing"
 
