@@ -60,8 +60,7 @@ rows_per_page = 50
 
 def display_paginated_dataframe(data, start_index, end_index):
     page_data = data.iloc[start_index:end_index]
-    st.dataframe(page_data, use_container_width=True, hide_index=True)
-    return page_data
+    return st.dataframe(page_data, use_container_width=True, hide_index=True)
   
 def daily(date, data):
     df = pd.DataFrame(data)
@@ -94,6 +93,7 @@ page = 1
 # Display paginated dataframe based on page number
 start_index = (page - 1) * rows_per_page
 end_index = min(start_index + rows_per_page, len(data))
+data_display_placeholder = st.empty()  # Placeholder to display DataFrame
 page_data = display_paginated_dataframe(data, start_index, end_index)
 
 # Display pagination controls
@@ -104,12 +104,16 @@ if col1.button("Previous") and page > 1:
     start_index = (page - 1) * rows_per_page
     end_index = min(start_index + rows_per_page, len(data))
     page_data = display_paginated_dataframe(data, start_index, end_index)
+    data_display_placeholder.empty()  # Clear previous DataFrame
+    data_display_placeholder = display_paginated_dataframe(data, start_index, end_index)
 
 if col2.button("Next") and page < total_pages:
     page += 1
     start_index = (page - 1) * rows_per_page
     end_index = min(start_index + rows_per_page, len(data))
     page_data = display_paginated_dataframe(data, start_index, end_index)
+    data_display_placeholder.empty()  # Clear previous DataFrame
+    data_display_placeholder = display_paginated_dataframe(data, start_index, end_index)
   
 # with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
