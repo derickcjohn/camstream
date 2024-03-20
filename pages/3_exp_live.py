@@ -3,7 +3,6 @@ import pandas as pd
 from datetime import timedelta
 from streamlit_gsheets import GSheetsConnection
 from PIL import Image
-import time
 
 image = Image.open('icon.png')
 
@@ -43,25 +42,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.header("Expirimental Live Page")
-
-placeholder = st.empty()
-
-# Replace the placeholder with some text:
-placeholder.text("Hello")
-time.sleep(2)
-# Replace the text with a chart:
-line = placeholder.line_chart({"data": [1, 5, 2, 6]})
-time.sleep(2)
-
-# Replace the chart with several elements:
-with placeholder.container():
-    st.write("This is one element")
-    time.sleep(2)
-    st.write("This is another")
-    time.sleep(2)
-
-# Clear all those elements:
-placeholder.empty()
 
 # st.text("This page allows you to delve into your Camstream data collected on various dates.")
 url = "https://docs.google.com/spreadsheets/d/11o-ZoNmn4-FdCHd0gJuZMrUC-3mYFgo2EheHKIJfhvE/edit?usp=sharing"
@@ -115,7 +95,7 @@ page = 1
 start_index = (page - 1) * rows_per_page
 end_index = min(start_index + rows_per_page, len(data))
 data_display_placeholder = st.empty()  # Placeholder to display DataFrame
-page_data = data_display_placeholder.empty.display_paginated_dataframe(data, start_index, end_index)
+page_data_placeholder = display_paginated_dataframe(data, start_index, end_index)
 
 # Display pagination controls
 col1, col2 = st.columns(2)
@@ -126,7 +106,7 @@ if col1.button("Previous") and page > 1:
     end_index = min(start_index + rows_per_page, len(data))
     page_data = display_paginated_dataframe(data, start_index, end_index)
     data_display_placeholder.empty()  # Clear previous DataFrame
-    data_display_placeholder = data_display_placeholder.empty.display_paginated_dataframe(data, start_index, end_index)
+    page_data_placeholder = display_paginated_dataframe(data, start_index, end_index)
 
 if col2.button("Next") and page < total_pages:
     page += 1
@@ -134,7 +114,7 @@ if col2.button("Next") and page < total_pages:
     end_index = min(start_index + rows_per_page, len(data))
     page_data = display_paginated_dataframe(data, start_index, end_index)
     data_display_placeholder.empty()  # Clear previous DataFrame
-    data_display_placeholder = data_display_placeholder.empty.display_paginated_dataframe(data, start_index, end_index)
+    page_data_placeholder = display_paginated_dataframe(data, start_index, end_index)
   
 # with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
