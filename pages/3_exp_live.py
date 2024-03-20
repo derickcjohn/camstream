@@ -61,7 +61,7 @@ with placeholder.container():
     time.sleep(2)
 
 # Clear all those elements:
-placeholder
+placeholder.empty()
 
 # st.text("This page allows you to delve into your Camstream data collected on various dates.")
 url = "https://docs.google.com/spreadsheets/d/11o-ZoNmn4-FdCHd0gJuZMrUC-3mYFgo2EheHKIJfhvE/edit?usp=sharing"
@@ -115,7 +115,7 @@ page = 1
 start_index = (page - 1) * rows_per_page
 end_index = min(start_index + rows_per_page, len(data))
 data_display_placeholder = st.empty()  # Placeholder to display DataFrame
-page_data = display_paginated_dataframe(data, start_index, end_index)
+page_data = data_display_placeholder.empty.display_paginated_dataframe(data, start_index, end_index)
 
 # Display pagination controls
 col1, col2 = st.columns(2)
@@ -126,7 +126,7 @@ if col1.button("Previous") and page > 1:
     end_index = min(start_index + rows_per_page, len(data))
     page_data = display_paginated_dataframe(data, start_index, end_index)
     data_display_placeholder.empty()  # Clear previous DataFrame
-    data_display_placeholder = display_paginated_dataframe(data, start_index, end_index)
+    data_display_placeholder = data_display_placeholder.empty.display_paginated_dataframe(data, start_index, end_index)
 
 if col2.button("Next") and page < total_pages:
     page += 1
@@ -134,7 +134,7 @@ if col2.button("Next") and page < total_pages:
     end_index = min(start_index + rows_per_page, len(data))
     page_data = display_paginated_dataframe(data, start_index, end_index)
     data_display_placeholder.empty()  # Clear previous DataFrame
-    data_display_placeholder = display_paginated_dataframe(data, start_index, end_index)
+    data_display_placeholder = data_display_placeholder.empty.display_paginated_dataframe(data, start_index, end_index)
   
 # with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
