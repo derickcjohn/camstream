@@ -56,6 +56,8 @@ except Exception as e:
 
 data = conn.read(spreadsheet=url, ttl="0")
 
+rows_per_page = 50
+
 def display_paginated_dataframe(data, page, rows_per_page):
     start_index = (page - 1) * rows_per_page
     end_index = min(start_index + rows_per_page, len(data))
@@ -85,9 +87,29 @@ def weekly(start_date, data):
 
     return weekly_df, 'Date'
 
-with st.expander("Data Preview"):
+# Calculate total number of pages
+total_pages = (len(data) + rows_per_page - 1) // rows_per_page
+
+# Display current page number
+st.write(f"Page: {page}/{total_pages}")
+
+# Display paginated dataframe based on page number
+page = st.number_input("Enter page number:", value=1, min_value=1, max_value=total_pages, step=1)
+page_data = display_paginated_dataframe(data, page, rows_per_page)
+
+# Display pagination controls
+col1, col2, col3 = st.columns(3)
+
+if col2.button("Previous") and page > 1:
+    page -= 1
+    page_data = display_paginated_dataframe(data, page, rows_per_page)
+
+if col3.button("Next") and page < total_pages:
+    page += 1
+    page_data = display_paginated_dataframe(data, page, rows_per_page)
+# with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
-  st.dataframe(data, use_container_width=True, hide_index=True)
+  # st.dataframe(data, use_container_width=True, hide_index=True)
 
 st.divider()
 
