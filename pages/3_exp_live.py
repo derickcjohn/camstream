@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import timedelta
 from streamlit_gsheets import GSheetsConnection
 from PIL import Image
+import math
 
 image = Image.open('icon.png')
 
@@ -72,7 +73,7 @@ def paginate_dataframe(df, page_size):
   """
 
   # Get the total number of pages
-  num_pages = int(ceil(len(df) / page_size))
+  num_pages = int(math.ceil(len(df) / page_size))
 
   # Create a Streamlit session state variable to store the current page number
   if 'current_page' not in st.session_state:
