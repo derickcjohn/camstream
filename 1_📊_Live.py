@@ -10,12 +10,12 @@ st.set_page_config(page_title="Cam stream Data - Live",
                    page_icon=image, 
                   layout="wide")
 
-# hide_streamlit_style = """
-#             <style>
-#             header {visibility: hidden;}
-#             </style>
-#             """
-# st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+hide_streamlit_style = """
+            <style>
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.sidebar.page_link(
   "1_📊_Live.py",  
   label="Live",
