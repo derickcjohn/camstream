@@ -100,7 +100,7 @@ st.info("Preview of latest 50 rows of data.", icon="ℹ")
 st.write(f"Page {page_number}/{total_pages}")
 
 # Display the DataFrame for the current page
-st.table(paginated_data)
+st.dataframe(paginated_data)
 
 # Pagination controls
 if total_pages > 1:
