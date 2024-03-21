@@ -57,12 +57,6 @@ except Exception as e:
 
 data = conn.read(spreadsheet=url, ttl="0")
 
-rows_per_page = 10
-
-def display_paginated_dataframe(data, start_index, end_index):
-    page_data = data.iloc[start_index:end_index]
-    st.dataframe(page_data, use_container_width=True, hide_index=True)
-  
 def daily(date, data):
     df = pd.DataFrame(data)
     df['Hour'] = pd.to_datetime(df['time-stamp']).dt.hour
@@ -85,35 +79,6 @@ def weekly(start_date, data):
 
     return weekly_df, 'Date'
 
-# Calculate total number of pages
-total_pages = (len(data) + rows_per_page - 1) // rows_per_page
-
-# Define initial page number
-page = 1
-
-# Display paginated dataframe based on page number
-start_index = (page - 1) * rows_per_page
-end_index = min(start_index + rows_per_page, len(data))
-data_display_placeholder = st.empty()  # Placeholder to display DataFrame
-display_paginated_dataframe(data, start_index, end_index)
-
-# Display pagination controls
-col1, col2 = st.columns(2)
-
-if col1.button("Previous") and page > 1:
-    page -= 1
-    start_index = (page - 1) * rows_per_page
-    end_index = min(start_index + rows_per_page, len(data))
-    data_display_placeholder.empty()  # Clear previous DataFrame
-    display_paginated_dataframe(data, start_index, end_index)
-
-if col2.button("Next") and page < total_pages:
-    page += 1
-    start_index = (page - 1) * rows_per_page
-    end_index = min(start_index + rows_per_page, len(data))
-    data_display_placeholder.empty()  # Clear previous DataFrame
-    display_paginated_dataframe(data, start_index, end_index)
-  
 # with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
   # st.dataframe(data, use_container_width=True, hide_index=True)
