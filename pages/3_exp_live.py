@@ -56,8 +56,9 @@ except Exception as e:
     st.stop()
 
 data = conn.read(spreadsheet=url, ttl="0")
+page_size = 10
 
-def paginate_dataframe(df, page_size=50):
+def paginate_dataframe(df, page_size):
   """
   This function paginates a DataFrame into manageable chunks.
 
@@ -120,7 +121,7 @@ def weekly(start_date, data):
 st.info("Data preview (paginated, showing {} rows per page).".format(page_size), icon="ℹ")
 
 # Use the paginate_dataframe function to get the current page data
-page_data = paginate_dataframe(data.copy())  # Avoid modifying the original data
+page_data = paginate_dataframe(data.copy(),page_size)  # Avoid modifying the original data
 
 # Display the current page data using Streamlit components
 st.dataframe(page_data, use_container_width=True, hide_index=True)
