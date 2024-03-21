@@ -94,7 +94,7 @@ def paginate_dataframe(df, page_size):
   # Slice the DataFrame to get the current page data
   page_data = df.iloc[start_index:end_index]
 
-  return page_data
+  return page_data, num_pages
 
 def daily(date, data):
     df = pd.DataFrame(data)
@@ -122,7 +122,7 @@ def weekly(start_date, data):
 st.info("Data preview (paginated, showing {} rows per page).".format(page_size), icon="ℹ")
 
 # Use the paginate_dataframe function to get the current page data
-page_data = paginate_dataframe(data.copy(),page_size)  # Avoid modifying the original data
+page_data, num_pages = paginate_dataframe(data.copy(),page_size)  # Avoid modifying the original data
 
 # Display the current page data using Streamlit components
 st.dataframe(page_data, use_container_width=True, hide_index=True)
