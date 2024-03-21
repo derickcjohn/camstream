@@ -85,7 +85,7 @@ total_rows = len(data)
 total_pages = total_rows // page_size + (1 if total_rows % page_size > 0 else 0)
 
 # Get the page number from the URL query parameter, default to 1
-page_number = st.experimental_get_query_params().get("page")
+page_number = st.query_params.get("page")
 page_number = int(page_number[0]) if page_number else 1
 
 # Slice the data for the current page
@@ -107,7 +107,7 @@ if total_pages > 1:
     st.write("Go to page:")
     for i in range(1, total_pages + 1):
         if st.button(f"Page {i}"):
-            st.experimental_set_query_params(page=i)
+            st.query_params(page=i)
         else:
             st.write(f"Page {i}", unsafe_allow_html=True)
                   
