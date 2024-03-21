@@ -106,10 +106,12 @@ st.dataframe(paginated_data, use_container_width=True, hide_index=True)
 if total_pages > 1:
     st.write("Go to page:")
     for i in range(1, total_pages + 1):
-        st.write(
-            f"[Page {i}](?page={i})", unsafe_allow_html=True
-        )  # Use query parameters for pagination
-
+        if i != page_number:
+            if st.button(f"Page {i}"):
+                st.experimental_set_query_params(page=i)
+        else:
+            st.write(f"Page {i}", unsafe_allow_html=True)  # Highlight current page
+          
 # with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
   # st.dataframe(data, use_container_width=True, hide_index=True)
