@@ -108,6 +108,8 @@ if total_pages > 1:
     for i in range(1, total_pages + 1):
         if st.button(f"Page {i}"):
             st.experimental_set_query_params(page=i)
+        else:
+            st.write(f"Page {i}", unsafe_allow_html=True)
                   
 # with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
