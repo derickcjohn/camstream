@@ -79,6 +79,37 @@ def weekly(start_date, data):
 
     return weekly_df, 'Date'
 
+# Paginate the DataFrame
+page_size = 10  # Number of rows per page
+total_rows = len(data)
+total_pages = total_rows // page_size + (1 if total_rows % page_size > 0 else 0)
+
+# Get the page number from the URL query parameter, default to 1
+page_number = st.experimental_get_query_params().get("page")
+page_number = int(page_number[0]) if page_number else 1
+
+# Slice the data for the current page
+start_idx = (page_number - 1) * page_size
+end_idx = min(start_idx + page_size, total_rows)
+paginated_data = data.iloc[start_idx:end_idx]
+
+# Display the paginated data
+st.info("Preview of latest 50 rows of data.", icon="ℹ")
+
+# Show the current page and total pages
+st.write(f"Page {page_number}/{total_pages}")
+
+# Display the DataFrame for the current page
+st.table(paginated_data)
+
+# Pagination controls
+if total_pages > 1:
+    st.write("Go to page:")
+    for i in range(1, total_pages + 1):
+        st.write(
+            f"[Page {i}](?page={i})", unsafe_allow_html=True
+        )  # Use query parameters for pagination
+
 # with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
   # st.dataframe(data, use_container_width=True, hide_index=True)
