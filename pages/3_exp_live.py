@@ -129,11 +129,20 @@ st.dataframe(page_data, use_container_width=True, hide_index=True)
 
 # Add navigation controls (optional)
 if num_pages > 1:
-  # Create buttons for previous and next pages
-  if st.button("Previous Page") and current_page > 1:
-    st.session_state['current_page'] -= 1
-  if st.button("Next Page") and current_page < num_pages:
-    st.session_state['current_page'] += 1
+    # Create buttons for previous and next pages
+    col1, col2, col3 = st.columns([1, 5, 1])
+    with col2:
+        st.button("Previous Page", key="prev") if current_page > 1 else st.write('')
+    with col1:
+        st.write('')
+    with col3:
+        st.button("Next Page", key="next") if current_page < num_pages else st.write('')
+    
+    # Display page numbers as buttons
+    st.write("Go to page:")
+    for i in range(1, num_pages + 1):
+        if st.button(str(i)):
+            st.session_state['current_page'] = i
                   
 # with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
