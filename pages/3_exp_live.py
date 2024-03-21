@@ -57,6 +57,43 @@ except Exception as e:
 
 data = conn.read(spreadsheet=url, ttl="0")
 
+def paginate_dataframe(df, page_size=50):
+  """
+  This function paginates a DataFrame into manageable chunks.
+
+  Args:
+      df (pandas.DataFrame): The DataFrame to be paginated.
+      page_size (int, optional): The number of rows to display per page.
+          Defaults to 50.
+
+  Returns:
+      pandas.DataFrame: A slice of the DataFrame containing the current page.
+  """
+
+  # Get the total number of pages
+  num_pages = int(ceil(len(df) / page_size))
+
+  # Create a Streamlit session state variable to store the current page number
+  if 'current_page' not in st.session_state:
+    st.session_state['current_page'] = 1
+
+  # Get the current page number from the session state
+  current_page = st.session_state['current_page']
+
+  # Validate the current page number to prevent errors
+  if current_page < 1 or current_page > num_pages:
+    current_page = 1
+    st.session_state['current_page'] = current_page  # Reset to first page
+
+  # Calculate the starting and ending indices for the current page
+  start_index = (current_page - 1) * page_size
+  end_index = start_index + page_size
+
+  # Slice the DataFrame to get the current page data
+  page_data = df.iloc[start_index:end_index]
+
+  return page_data
+
 def daily(date, data):
     df = pd.DataFrame(data)
     df['Hour'] = pd.to_datetime(df['time-stamp']).dt.hour
@@ -79,37 +116,22 @@ def weekly(start_date, data):
 
     return weekly_df, 'Date'
 
-# Paginate the DataFrame
-page_size = 10  # Number of rows per page
-total_rows = len(data)
-total_pages = total_rows // page_size + (1 if total_rows % page_size > 0 else 0)
+# Display information about the pagination
+st.info("Data preview (paginated, showing {} rows per page).".format(page_size), icon="ℹ")
 
-# Get the page number from the URL query parameter, default to 1
-page_number = st.query_params.get("page")
-page_number = int(page_number[0]) if page_number else 1
+# Use the paginate_dataframe function to get the current page data
+page_data = paginate_dataframe(data.copy())  # Avoid modifying the original data
 
-# Slice the data for the current page
-start_idx = (page_number - 1) * page_size
-end_idx = min(start_idx + page_size, total_rows)
-paginated_data = data.iloc[start_idx:end_idx]
+# Display the current page data using Streamlit components
+st.dataframe(page_data, use_container_width=True, hide_index=True)
 
-# Display the paginated data
-st.info("Preview of latest 50 rows of data.", icon="ℹ")
-
-# Show the current page and total pages
-st.write(f"Page {page_number}/{total_pages}")
-
-# Display the DataFrame for the current page
-st.dataframe(paginated_data, use_container_width=True, hide_index=True)
-
-# Pagination controls
-if total_pages > 1:
-    st.write("Go to page:")
-    for i in range(1, total_pages + 1):
-        if st.button(f"Page {i}"):
-            st.query_params(page=i)
-        else:
-            st.write(f"Page {i}", unsafe_allow_html=True)
+# Add navigation controls (optional)
+if num_pages > 1:
+  # Create buttons for previous and next pages
+  if st.button("Previous Page") and current_page > 1:
+    st.session_state['current_page'] -= 1
+  if st.button("Next Page") and current_page < num_pages:
+    st.session_state['current_page'] += 1
                   
 # with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
