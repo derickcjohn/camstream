@@ -102,12 +102,18 @@ st.write(f"Page {page_number}/{total_pages}")
 # Display the DataFrame for the current page
 st.dataframe(paginated_data, use_container_width=True, hide_index=True)
 
-# Pagination controls
-if total_pages > 1:
-    st.write("Go to page:")
-    for i in range(1, total_pages + 1):
-        if st.button(f"Page {i}"):
-            st.experimental_set_query_params(page=i)
+# Disable caching for pagination controls
+@st.cache(suppress_st_warning=True)
+def pagination_controls():
+    # Pagination controls
+    if total_pages > 1:
+        st.write("Go to page:")
+        for i in range(1, total_pages + 1):
+            if st.button(f"Page {i}"):
+                st.experimental_set_query_params(page=i)
+
+# Render pagination controls
+pagination_controls()
                   
 # with st.expander("Data Preview"):
   # st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
