@@ -119,7 +119,7 @@ def weekly(start_date, data):
     return weekly_df, 'Date'
 
 # Display information about the pagination
-st.info("Data preview (paginated, showing {} rows per page).".format(page_size), icon="ℹ")
+# st.info("Data preview (paginated, showing {} rows per page).".format(page_size), icon="ℹ")
 
 # Use the paginate_dataframe function to get the current page data
 # page_data, num_pages, current_page = paginate_dataframe(data.copy(),page_size)  # Avoid modifying the original data
