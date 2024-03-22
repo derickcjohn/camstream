@@ -153,7 +153,7 @@ pagination = st.container()
 
 bottom_menu = st.columns((4, 1, 1))
 with bottom_menu[2]:
-    batch_size = st.selectbox("Page Size", options=[25, 50, 100])
+    batch_size = st.selectbox("Page Size", options=[10, 25, 50, 100])
 with bottom_menu[1]:
     total_pages = (
         int(math.ceil(len(data) / batch_size)) if int(len(data) / batch_size) > 0 else 1
