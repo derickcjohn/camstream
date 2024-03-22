@@ -20,12 +20,12 @@ st.set_page_config(page_title="Cam stream Data - Exp-Live",
 #             """
 # st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.sidebar.page_link(
-  "1_📊_Live.py",  
+  "exp_live.py",  
   label="Live",
   icon="📊",
   help="Currently viewing the Page")
 st.sidebar.page_link(
-  "1_📊_Live.py",
+  "exp_live.py",
   # "pages/2_📷_Demo.py",  
   label="Demo",
   icon="📷",
