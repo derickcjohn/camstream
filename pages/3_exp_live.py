@@ -62,44 +62,6 @@ data = conn.read(spreadsheet=url, ttl="0")
 def split_frame(input_df, rows):
     df = [input_df.loc[i : i + rows - 1, :] for i in range(0, len(input_df), rows)]
     return df
-# page_size = 10
-
-# def paginate_dataframe(df, page_size):
-#   """
-#   This function paginates a DataFrame into manageable chunks.
-
-#   Args:
-#       df (pandas.DataFrame): The DataFrame to be paginated.
-#       page_size (int, optional): The number of rows to display per page.
-#           Defaults to 50.
-
-#   Returns:
-#       pandas.DataFrame: A slice of the DataFrame containing the current page.
-#   """
-
-#   # Get the total number of pages
-#   num_pages = int(math.ceil(len(df) / page_size))
-
-#   # Create a Streamlit session state variable to store the current page number
-#   if 'current_page' not in st.session_state:
-#     st.session_state['current_page'] = 1
-
-#   # Get the current page number from the session state
-#   current_page = st.session_state['current_page']
-
-#   # Validate the current page number to prevent errors
-#   if current_page < 1 or current_page > num_pages:
-#     current_page = 1
-#     st.session_state['current_page'] = current_page  # Reset to first page
-
-#   # Calculate the starting and ending indices for the current page
-#   start_index = (current_page - 1) * page_size
-#   end_index = start_index + page_size
-
-#   # Slice the DataFrame to get the current page data
-#   page_data = df.iloc[start_index:end_index]
-
-#   return page_data, num_pages, current_page
 
 def daily(date, data):
     df = pd.DataFrame(data)
@@ -123,32 +85,6 @@ def weekly(start_date, data):
 
     return weekly_df, 'Date'
 
-# Display information about the pagination
-# st.info("Data preview (paginated, showing {} rows per page).".format(page_size), icon="ℹ")
-
-# Use the paginate_dataframe function to get the current page data
-# page_data, num_pages, current_page = paginate_dataframe(data.copy(),page_size)  # Avoid modifying the original data
-
-# # Display the current page data using Streamlit components
-# st.dataframe(page_data, use_container_width=True, hide_index=True)
-
-# # Add navigation controls (optional)
-# if num_pages > 1:
-#     # Create buttons for previous and next pages
-#     col1, col2, col3 = st.columns([1, 5, 1])
-#     with col2:
-#         st.button("Previous Page", key="prev") if current_page > 1 else st.write('')
-#     with col1:
-#         st.write('')
-#     with col3:
-#         st.button("Next Page", key="next") if current_page < num_pages else st.write('')
-    
-#     # Display page numbers as buttons
-#     st.write("Go to page:")
-#     for i in range(1, num_pages + 1):
-#         if st.button(str(i)):
-#             st.session_state['current_page'] = i
-
 pagination = st.container()
 
 bottom_menu = st.columns((4, 1, 1))
@@ -167,7 +103,8 @@ with bottom_menu[0]:
 
 
 pages = split_frame(data, batch_size)
-pagination.dataframe(data=pages[current_page - 1], use_container_width=True)
+with st.expander("Data Preview"):
+  pagination.dataframe(data=pages[current_page - 1], use_container_width=True, hide_index=True)
                   
 # with st.expander("Data Preview"):
 #   st.info("New data is constantly added. Click 'R' to refresh and view it.", icon="ℹ")
