@@ -22,7 +22,7 @@ st.sidebar.page_link(
   icon="📊",
   help="Currently viewing the Page")
 st.sidebar.page_link(
-  "1_📊_Live.py",
+  "https://camstream.streamlit.app/",
   # "pages/2_📷_Demo.py",  
   label="Demo",
   icon="📷",
