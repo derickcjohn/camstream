@@ -28,6 +28,7 @@ st.sidebar.page_link(
   icon="📷",
   disabled=True,
   help="Page is in Development")
+st.sidebar.divider()
 st.sidebar.success("Select a page from above")
 
 st.markdown("""
