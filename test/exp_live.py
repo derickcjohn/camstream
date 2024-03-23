@@ -141,14 +141,14 @@ else:
 st.divider()
 right_column.dataframe(result, use_container_width=True, hide_index=True)
 
-# left_graph, right_graph = st.columns(2)
-left_column.bar_chart(result, x = x_label, color=[
+left_graph, right_graph = st.columns(2)
+left_graph.bar_chart(result, x = x_label, color=[
     '#FFC0CB', 
     '#FF5733',  
     '#DC143C', 
     '#8B0000',  
 ])
-left_column.markdown(
+left_graph.markdown(
     f'<p style="text-align:center;">Graph displaying the total and individual counts of items detected for each {x_label}.</p>',
     unsafe_allow_html=True
 )
@@ -163,9 +163,9 @@ left_column.markdown(
 classes = result.columns[1:]
 selected_class = left_column.selectbox("Select an item to view its individual count", classes)
 filtered_result = result[[x_label, selected_class]]  
-right_column.bar_chart(filtered_result, x=x_label, color='#666666')
+right_graph.bar_chart(filtered_result, x=x_label, color='#666666')
 caption_text = f"Graph depicting the number of <i>{selected_class}</i> detected for each {x_label}."
-right_column.markdown(
+right_graph.markdown(
     f'<p style="text-align:center;">{caption_text}</p>',
     unsafe_allow_html=True
 )
