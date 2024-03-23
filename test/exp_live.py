@@ -148,6 +148,10 @@ left_graph.bar_chart(result, x = x_label, color=[
     '#DC143C', 
     '#8B0000',  
 ])
+left_graph.markdown(
+    f'<p style="text-align:center;">Graph displaying the total and individual counts of items detected for each {x_label}.</p>',
+    unsafe_allow_html=True
+)
 # st.bar_chart(result, x = x_label, color=[
 #     '#FFC0CB', 
 #     '#FF5733',  
