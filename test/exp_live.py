@@ -131,7 +131,7 @@ if selected_date not in set_date:
     st.warning("Data not available for the selected date, please select another date.", icon="⚠️")
     st.stop()
 
-display_mode = right_column.radio('Select Display Mode', ['Daily', 'Weekly'])
+display_mode = left_column.radio('Select Display Mode', ['Daily', 'Weekly'])
 
 if display_mode == 'Daily':
     result, x_label = daily(selected_date, data)
