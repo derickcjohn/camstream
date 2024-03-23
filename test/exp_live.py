@@ -139,20 +139,20 @@ else:
     result, x_label = weekly(selected_date, data)
 
 st.divider()
-left_column.dataframe(result, use_container_width=True, hide_index=True)
+right_column.dataframe(result, use_container_width=True, hide_index=True)
 
 # left_graph, right_graph = st.columns(2)
-right_column.bar_chart(result, x = x_label, color=[
+left_column.bar_chart(result, x = x_label, color=[
     '#FFC0CB', 
     '#FF5733',  
     '#DC143C', 
     '#8B0000',  
 ])
-right_column.markdown(
+left_column.markdown(
     f'<p style="text-align:center;">Graph displaying the total and individual counts of items detected for each {x_label}.</p>',
     unsafe_allow_html=True
 )
-right_column.divider
+
 # st.bar_chart(result, x = x_label, color=[
 #     '#FFC0CB', 
 #     '#FF5733',  
