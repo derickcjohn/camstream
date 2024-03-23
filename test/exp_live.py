@@ -161,7 +161,7 @@ left_graph.markdown(
 # ])
 
 classes = result.columns[1:]
-selected_class = right_column.selectbox("Select an item to view its individual count", classes)
+selected_class = right_graph.selectbox("Select an item to view its individual count", classes)
 filtered_result = result[[x_label, selected_class]]  
 right_graph.bar_chart(filtered_result, x=x_label, color='#666666')
 caption_text = f"Graph depicting the number of <i>{selected_class}</i> detected for each {x_label}."
