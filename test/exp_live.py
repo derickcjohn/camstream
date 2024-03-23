@@ -140,18 +140,25 @@ else:
 st.divider()
 st.dataframe(result, use_container_width=True, hide_index=True)
 st.divider()
-st.bar_chart(result, x = x_label, color=[
+left_column, right_column = st.columns(2)
+left_column.bar_chart(result, x = x_label, color=[
     '#FFC0CB', 
     '#FF5733',  
     '#DC143C', 
     '#8B0000',  
 ])
+# st.bar_chart(result, x = x_label, color=[
+#     '#FFC0CB', 
+#     '#FF5733',  
+#     '#DC143C', 
+#     '#8B0000',  
+# ])
 
 classes = result.columns[1:]
 selected_class = st.selectbox("Select an object from the list", classes)
 if display_mode == 'Daily':
     filtered_result = result[[x_label, selected_class]]  
-    st.bar_chart(filtered_result, x=x_label, color='#666666')
+    right_column.bar_chart(filtered_result, x=x_label, color='#666666')
 else:
     filtered_result = result[[x_label, selected_class]]  
-    st.bar_chart(filtered_result, x = x_label, color='#666666')
+    right_column.bar_chart(filtered_result, x = x_label, color='#666666')
