@@ -119,7 +119,8 @@ set_date = set(data['time-stamp'].dt.date)
 
 min_date = data['time-stamp'].min().date()
 max_date = data['time-stamp'].max().date()
-selected_date = st.date_input("Select Date", value=None, min_value=min_date, 
+left_column, middle_column, right_column = st.columns(3)
+selected_date = left_column.date_input("Select Date", value=None, min_value=min_date, 
                               max_value=max_date, format="DD/MM/YYYY")
 
 if selected_date is None:
@@ -130,7 +131,7 @@ if selected_date not in set_date:
     st.warning("Data not available for the selected date, please select another date.", icon="⚠️")
     st.stop()
 
-display_mode = st.radio('Select Display Mode', ['Daily', 'Weekly'])
+display_mode = middle_column.radio('Select Display Mode', ['Daily', 'Weekly'])
 
 if display_mode == 'Daily':
     result, x_label = daily(selected_date, data)
@@ -155,7 +156,7 @@ left_graph.bar_chart(result, x = x_label, color=[
 # ])
 
 classes = result.columns[1:]
-selected_class = st.selectbox("Select an object from the list", classes)
+selected_class = right_column.selectbox("Select an object from the list", classes)
 if display_mode == 'Daily':
     filtered_result = result[[x_label, selected_class]]  
     right_graph.bar_chart(filtered_result, x=x_label, color='#666666')
