@@ -120,18 +120,18 @@ set_date = set(data['time-stamp'].dt.date)
 min_date = data['time-stamp'].min().date()
 max_date = data['time-stamp'].max().date()
 left_column, right_column = st.columns(2)
-selected_date = left_column.date_input("Select Date", value=None, min_value=min_date, 
+selected_date = left_column.date_input("Date", value=None, min_value=min_date, 
                               max_value=max_date, format="DD/MM/YYYY")
 
 if selected_date is None:
-    st.info("Select a Date", icon="ℹ")
+    st.info("Pick a Date", icon="ℹ")
     st.stop()
 
 if selected_date not in set_date:
     st.warning("Data not available for the selected date, please select another date.", icon="⚠️")
     st.stop()
 
-display_mode = left_column.radio('Select Display Mode', ['Daily', 'Weekly'])
+display_mode = left_column.radio('Display Mode', ['Daily', 'Weekly'])
 
 if display_mode == 'Daily':
     result, x_label = daily(selected_date, data)
