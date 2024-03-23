@@ -160,10 +160,11 @@ left_graph.markdown(
 # ])
 
 classes = result.columns[1:]
-selected_class = right_column.selectbox("Select an object from the list", classes)
-if display_mode == 'Daily':
-    filtered_result = result[[x_label, selected_class]]  
-    right_graph.bar_chart(filtered_result, x=x_label, color='#666666')
-else:
-    filtered_result = result[[x_label, selected_class]]  
-    right_graph.bar_chart(filtered_result, x = x_label, color='#666666')
+selected_class = st.selectbox("Select an item to view its individual count", classes)
+filtered_result = result[[x_label, selected_class]]  
+right_graph.bar_chart(filtered_result, x=x_label, color='#666666')
+caption_text = f"Graph depicting the number of <i>{selected_class}</i> detected for each {x_label}."
+right_graph.markdown(
+    f'<p style="text-align:center;">{caption_text}</p>',
+    unsafe_allow_html=True
+)
