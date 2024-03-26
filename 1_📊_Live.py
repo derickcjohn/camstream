@@ -90,7 +90,8 @@ set_date = set(data['time-stamp'].dt.date)
 
 min_date = data['time-stamp'].min().date()
 max_date = data['time-stamp'].max().date()
-selected_date = st.date_input("Date", value=None, min_value=min_date, 
+left_column, right_column = st.columns(2)
+selected_date = left_column.date_input("Date", value=None, min_value=min_date, 
                               max_value=max_date, format="DD/MM/YYYY")
 
 if selected_date is None:
