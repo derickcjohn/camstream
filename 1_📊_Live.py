@@ -109,19 +109,21 @@ if display_mode == 'Daily':
 else:
     result, x_label = weekly(selected_date, data)
 
-st.dataframe(result, use_container_width=True, hide_index=True)
 st.divider()
-st.bar_chart(result, x = x_label, color=[
+
+right_column.dataframe(result, use_container_width=True, hide_index=True)
+
+left_graph, right_graph = st.columns(2)
+left_graph.bar_chart(result, x = x_label, color=[
     '#FFC0CB', 
     '#FF5733',  
     '#DC143C', 
     '#8B0000',  
 ])
-st.markdown(
+left_graph.markdown(
     f'<p style="text-align:center;">Graph displaying the total and individual counts of items detected for each {x_label}.</p>',
     unsafe_allow_html=True
 )
-st.divider()
 
 classes = result.columns[1:]
 selected_class = st.selectbox("Select an item to view its individual count", classes)
