@@ -83,8 +83,6 @@ with st.expander("Data Preview"):
   st.info("Preview of latest 50 rows of data.", icon="ℹ")
   st.dataframe(data.iloc[-50:], use_container_width=True, hide_index=True)
 
-st.divider()
-
 data['time-stamp'] = pd.to_datetime(data['time-stamp'], format='%d/%m/%Y %H:%M:%S')
 set_date = set(data['time-stamp'].dt.date)
 
